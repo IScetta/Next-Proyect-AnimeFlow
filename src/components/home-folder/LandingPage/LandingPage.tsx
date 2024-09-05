@@ -40,9 +40,9 @@ export default async function LandingPage() {
 
           <div className="mt-20">
             <h1 className="text-white mt-2 font-bold h-full border-b-4 border-blueWhite">
-              Anime & Manga News
+              Top Anime
             </h1>
-            <NewsContainer NewData={NewsAnime} />
+            <NewsContainer TopAnime={dataTrailer} />
           </div>
         </div>
 

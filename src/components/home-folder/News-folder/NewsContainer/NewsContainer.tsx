@@ -1,17 +1,14 @@
 
 import { NewDataType } from "@/types/news"
 import NewsCards from "../NewsCards"
+import { AnimeType } from "@/types/anime"
 
-export default async function NewsContainer({NewData}:{NewData:NewDataType}){
+export default async function NewsContainer({TopAnime}:{TopAnime:AnimeType}){
     
     return(
-        <div className="flex flex-wrap justify-between w-full h-auto">
-            {NewData?.data.map((data,index)=>(
-                <div key={index} >
-                {index<8 &&
-                    <NewsCards dataNews={data}/>
-                }
-                </div>
+        <div className="flex flex-wrap  justify-between w-full h-full">
+            {TopAnime?.data.map((data,index)=>(
+                    <NewsCards key={index} TopAnime={data}/>
             ))}
         </div>
     )
