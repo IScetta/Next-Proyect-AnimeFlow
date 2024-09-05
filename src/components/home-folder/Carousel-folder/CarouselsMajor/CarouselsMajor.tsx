@@ -6,9 +6,9 @@ import "swiper/css";
 import Image from "next/image";
 import { A11y, Autoplay, Navigation, Pagination, Scrollbar } from "swiper/modules";
 
-export default () => {
+export default function CarouselsMajor(){
   return (
-    <div className=" mx-36">
+    <div className="mx-36">
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         spaceBetween={50}

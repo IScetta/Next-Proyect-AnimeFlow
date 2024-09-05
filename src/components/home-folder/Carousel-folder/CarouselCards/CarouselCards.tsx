@@ -11,7 +11,7 @@ import { A11y, Navigation, Pagination, Scrollbar, Autoplay } from "swiper/module
 import Cards from "../Cards/Cards";
 import { AnimeType, DataAnimeType } from "@/types/anime";
 
-export default ({ dataAnimeSeason, cont }: { dataAnimeSeason: AnimeType | null, cont:number }) => {
+export default function CarouselCards({ dataAnimeSeason, cont }: { dataAnimeSeason: AnimeType | null, cont:number }){
   return (
     <Swiper
       // install Swiper modules
@@ -24,8 +24,8 @@ export default ({ dataAnimeSeason, cont }: { dataAnimeSeason: AnimeType | null, 
         disableOnInteraction: false,
       }}
     >
-      {dataAnimeSeason?.data.map((data:DataAnimeType, index: number) => (
-        <SwiperSlide key={index}>
+      {dataAnimeSeason?.data.map((data:DataAnimeType) => (
+        <SwiperSlide key={data.mal_id}>
           <Cards
             image={data.images.webp.image_url}
             mal_id={data.mal_id}

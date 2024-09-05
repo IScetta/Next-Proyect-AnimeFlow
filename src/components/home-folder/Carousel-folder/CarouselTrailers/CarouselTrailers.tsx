@@ -10,7 +10,7 @@ import CardsTrailer from "../CardsTrailer";
 import { useState } from "react";
 import CardTrailerPlayer from "../CardTrailerPlayer";
 
-export default function MySwiperComponent({
+export default function CarouselTrailers({
   dataAnimeTrailer,
   cont
 }: {
@@ -38,10 +38,10 @@ export default function MySwiperComponent({
         spaceBetween={0}
         navigation
       >
-        {dataAnimeTrailer?.data.map((data: DataAnimeType, index: number) => (
-            <div>
+        {dataAnimeTrailer?.data.map((data: DataAnimeType) => (
+            <div key={data.mal_id}>
                 {data.trailer.images.medium_image_url && (
-                    <SwiperSlide key={index}>
+                    <SwiperSlide >
                   <button
                     onClick={() => openModal(data.trailer.url)}>
                     <CardsTrailer
