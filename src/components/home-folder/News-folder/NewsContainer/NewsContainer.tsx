@@ -2,7 +2,7 @@
 import { NewDataType } from "@/types/news"
 import NewsCards from "../NewsCards"
 
-export default async function NewsContainer({NewData}:{NewData:NewDataType | null }){
+export default async function NewsContainer({NewData}:{NewData:NewDataType}){
     
     return(
         <div className="flex flex-wrap justify-between w-full h-auto">
