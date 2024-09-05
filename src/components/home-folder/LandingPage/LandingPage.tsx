@@ -13,10 +13,10 @@ export default async function LandingPage() {
         const dataAnimeSeasonNow: AnimeType = await getSeasonNow();
         const dataTrailer: AnimeType = await getTopAnime();
         const NewsAnime: NewDataType = await getAnimeNews();
-        const AnimeUpcoming: AnimeType = await getSeasonUpcoming();
+        // const AnimeUpcoming: AnimeType = await getSeasonUpcoming();
 
 
-  if (AnimeUpcoming === null || dataAnimeSeasonNow === null || dataTrailer === null || NewsAnime === null) {
+  if (dataAnimeSeasonNow === null || dataTrailer === null || NewsAnime === null) {
     return <div className="text-white">Loading...</div> 
   }
 
