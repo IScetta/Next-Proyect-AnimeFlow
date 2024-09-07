@@ -34,6 +34,21 @@ export const getSeasonUpcoming = async () => {
   }
 };
 
+
+export const getAnimeFullById = async (id:number) => {
+  try {
+    const data = await fetchDataWithRetry(`${API_URL}anime/${id}/full`);
+    return data;
+  } catch (error) {
+    console.error('Error al obtener datos:', error);
+  }
+};
+
+
+
+
+
+
 const fetchDataWithRetry = async (url: string, retries = 3, delay = 1000) => {
   for (let i = 0; i < retries; i++) {
     try {

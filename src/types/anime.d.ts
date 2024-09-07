@@ -132,6 +132,10 @@ interface Pagination {
 
 // Tipo principal para la respuesta completa del API
 export interface AnimeType {
-  pagination: Pagination;
+  pagination?: Pagination;
   data: DataAnimeType[];
+}
+
+export interface AnimeTypeByIdFull {
+  data: DataAnimeType;
 }
