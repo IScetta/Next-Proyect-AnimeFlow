@@ -7,7 +7,7 @@ export default function TopAnimeUpcomingContainer({TopAnimeUpcoming}:{TopAnimeUp
     return(
         <div className=" flex flex-col justify-center pb-4 mx-1">
             {TopAnimeUpcoming.data.map((data)=>(
-                <TopAnimeUpcomingCards DataAnime={data}/>
+                <TopAnimeUpcomingCards key={data.mal_id} DataAnime={data}/>
             ))
             }
         </div>
