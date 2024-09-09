@@ -8,7 +8,7 @@ export default async function Anime ({params}:{params:any}){
     const dataAnimeFull:AnimeTypeByIdFull = await getMangaFullById(slug)
 
     return (
-        <div>
+        <div className="px-14">
             <Image alt="" src={dataAnimeFull.data.images.webp.image_url} width={200} height={200}/>
         </div>
     )

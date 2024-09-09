@@ -36,6 +36,20 @@ export default function CarouselTrailers({
         modules={[Navigation, Scrollbar, A11y, Autoplay]}
         slidesPerView={cont}
         spaceBetween={0}
+        breakpoints={{
+          0:{
+            slidesPerView:1
+          },
+          480:{
+            slidesPerView:2
+          },
+          768:{
+            slidesPerView:3
+          },
+          1536:{
+            slidesPerView:3
+          },
+        }}
         navigation
       >
         {dataAnimeTrailer?.data.map((data: DataAnimeType) => (
@@ -43,11 +57,12 @@ export default function CarouselTrailers({
                 {data.trailer.images.medium_image_url && (
                     <SwiperSlide >
                   <button
+                    className=""
                     onClick={() => openModal(data.trailer.url)}>
                     <CardsTrailer
                       image_trailer={data.trailer.images.medium_image_url}
-                      mal_id={data.mal_id}
-                      title={data.title_english}
+                      typeCard={true}
+                      
                     />
                   </button>
               </SwiperSlide>

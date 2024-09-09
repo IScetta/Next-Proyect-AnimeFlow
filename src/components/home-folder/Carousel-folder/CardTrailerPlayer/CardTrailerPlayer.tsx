@@ -11,8 +11,8 @@ const CardTrailerPlayer: React.FC<ModalProps> = ({ isOpen, onClose, url_trailer 
   if (!isOpen || !url_trailer) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex justify-center items-center z-50">
-      <div className="bg-grayDark rounded-lg shadow-lg w-[720px] h-[400px] mx-4">
+    <button onClick={onClose} className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex justify-center items-center z-40">
+      <div className="bg-grayDark rounded-lg shadow-lg w-[720px] h-[400px] mx-4 z-50">
         <div className="">
           <ReactPlayer controls={true} url={url_trailer} width={720} height={400}/>
         </div>
@@ -25,7 +25,7 @@ const CardTrailerPlayer: React.FC<ModalProps> = ({ isOpen, onClose, url_trailer 
           </button>
         </div>
       </div>
-    </div>
+    </button>
   );
 };
 

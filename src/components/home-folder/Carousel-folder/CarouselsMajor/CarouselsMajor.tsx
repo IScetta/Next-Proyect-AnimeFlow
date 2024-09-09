@@ -8,7 +8,7 @@ import { A11y, Autoplay, Navigation, Pagination, Scrollbar } from "swiper/module
 
 export default function CarouselsMajor(){
   return (
-    <div className="mx-36">
+    <div className="mx-14">
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         spaceBetween={50}

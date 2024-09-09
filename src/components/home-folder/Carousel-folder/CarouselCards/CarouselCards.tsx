@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { A11y, Navigation, Pagination, Scrollbar, Autoplay } from "swiper/modules";
+import { A11y, Navigation, Pagination, Scrollbar, Autoplay, FreeMode } from "swiper/modules";
 import Cards from "../Cards/Cards";
 import { AnimeType, DataAnimeType } from "@/types/anime";
 
@@ -19,6 +19,20 @@ export default function CarouselCards({ dataApiList, cont, type }: { dataApiList
       spaceBetween={0}
       slidesPerView={cont}
       navigation
+      breakpoints={{
+        0:{
+          slidesPerView:cont-2
+        },
+        480:{
+          slidesPerView:cont-1
+        },
+        768:{
+          slidesPerView:cont
+        },
+        1536:{
+          slidesPerView:cont+1
+        },
+      }}
       autoplay={{
         delay: 2500,
         disableOnInteraction: false,

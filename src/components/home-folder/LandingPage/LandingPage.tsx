@@ -30,7 +30,7 @@ export default async function LandingPage() {
         <CarouselsMajor />
       </div>
 
-      <div className="flex flex-row mx-36 mt-2">
+      <div className="flex flex-row mx-14 mt-2">
         <div className="w-[70%]">
           <div>
             <h1 className="text-white mt-2 font-bold">Summer 2024 Anime</h1>
