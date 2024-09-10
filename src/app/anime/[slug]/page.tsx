@@ -37,7 +37,7 @@ export default function Anime({ params }: { params: any }) {
         }
     }
         fechData();
-  },[])
+  },[slug])
 
   if(!dataAnimeFull){
     return(
