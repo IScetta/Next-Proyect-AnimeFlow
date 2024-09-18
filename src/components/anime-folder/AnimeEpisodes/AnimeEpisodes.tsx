@@ -63,6 +63,7 @@ export default function AnimeEpisodes({
 
         {pages.map((page) => (
           <button
+            key={page}
             onClick={() => setPagination(page)}
             className={`flex justify-center items-center px-1 mx-1 my-2 hover:border-b-2 hover:border-blueWhite ${
               pagination === page && "text-blueWhite border-b-2 border-blueWhite"
@@ -100,7 +101,7 @@ export default function AnimeEpisodes({
           </h1>
         </div>
         {animeEpisodies?.data.map((episode) => (
-          <div className="flex flex-row border border-white/30">
+          <div key={episode.mal_id} className="flex flex-row border border-white/30">
             <h1 className="text-white  border-r border-white/30 flex justify-center items-center w-10">
               {episode.mal_id}
             </h1>
@@ -140,6 +141,7 @@ export default function AnimeEpisodes({
 
         {pages.map((page) => (
           <button
+            key={page}
             onClick={() => setPagination(page)}
             className={`flex justify-center items-center px-1 mx-1 my-2 hover:border-b-2 hover:border-blueWhite ${
               pagination === page && "text-blueWhite border-b-2 border-blueWhite"
