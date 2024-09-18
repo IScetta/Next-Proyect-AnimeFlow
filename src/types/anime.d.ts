@@ -139,3 +139,73 @@ export interface AnimeType {
 export interface AnimeTypeByIdFull {
   data: DataAnimeType;
 }
+
+type AnimeStaffType = {
+  data: {
+    person: {
+      mal_id: number;
+      url: string;
+      images: {
+        jpg: {
+          image_url: string;
+        };
+      };
+      name: string;
+    };
+    positions: string[];
+  }[];
+};
+
+type AnimeCharacterType = {
+  data: {
+    character: {
+      mal_id: number;
+      url: string;
+      images: {
+        jpg: {
+          image_url: string;
+          small_image_url: string;
+        };
+        webp: {
+          image_url: string;
+          small_image_url: string;
+        };
+      };
+      name: string;
+    };
+    role: string;
+    voice_actors: {
+      person: {
+        mal_id: number;
+        url: string;
+        images: {
+          jpg: {
+            image_url: string;
+          };
+        };
+        name: string;
+      };
+      language: string;
+    }[];
+  }[];
+};
+
+type AnimeEpisodiesType = {
+  data: {
+    mal_id: number;
+    url: string;
+    title: string;
+    score: string;
+    title_japanese: string;
+    title_romanji: string;
+    duration: number;
+    aired: string;
+    filler: boolean;
+    recap: boolean;
+    forum_url: string;
+  }[];
+  pagination: {
+    last_visible_page: number;
+    has_next_page: boolean;
+  };
+};

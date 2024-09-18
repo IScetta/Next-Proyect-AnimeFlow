@@ -27,10 +27,10 @@ export default function CarouselCards({ dataApiList, cont, type }: { dataApiList
           slidesPerView:cont-1
         },
         768:{
-          slidesPerView:cont
+          slidesPerView:cont+1
         },
         1536:{
-          slidesPerView:cont+1
+          slidesPerView:cont+2
         },
       }}
       autoplay={{

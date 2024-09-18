@@ -44,8 +44,33 @@ export const getAnimeFullById = async (id:number) => {
   }
 };
 
+export const getAnimeStaff = async (id:number) => {
+  try {
+    const data = await fetchDataWithRetry(`${API_URL}anime/${id}/staff`);
+    return data;
+  } catch (error) {
+    console.error('Error al obtener datos:', error);
+  }
+};
+
+export const getAnimeCharacters = async (id:number) => {
+  try {
+    const data = await fetchDataWithRetry(`${API_URL}anime/${id}/characters`);
+    return data;
+  } catch (error) {
+    console.error('Error al obtener datos:', error);
+  }
+};
 
 
+export const getAnimeEpisodes = async (id:number, page:number) => {
+  try {
+    const data = await fetchDataWithRetry(`${API_URL}anime/${id}/episodes?&page=${page}`);
+    return data;
+  } catch (error) {
+    console.error('Error al obtener datos:', error);
+  }
+};
 
 
 

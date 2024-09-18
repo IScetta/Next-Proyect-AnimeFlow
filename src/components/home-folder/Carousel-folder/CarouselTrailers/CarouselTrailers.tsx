@@ -46,7 +46,10 @@ export default function CarouselTrailers({
           768:{
             slidesPerView:3
           },
-          1536:{
+          1280:{
+            slidesPerView:3
+          },
+          1560:{
             slidesPerView:3
           },
         }}

@@ -11,6 +11,7 @@
   "dependencies": {
     "@types/flickity": "^2.2.11",
     "axios": "^1.7.7",
+    "date-fns": "^4.0.0-beta.1",
     "flickity": "^3.0.0",
     "flickity-as-nav-for": "^3.0.0",
     "flowbite": "^2.5.1",
