@@ -82,9 +82,13 @@ export default function AnimeDetails({
       </div>
       <div className="flex flex-col p-4 m-4">
         <h2 className="text-white text-xl my-2">Synopsis</h2>
-        <p className="text-white/50 text-sm border-y-2 py-1 border-white/15">
-          {dataAnimeFull.data.synopsis}
-        </p>
+
+        <p
+          className="text-white/50 text-sm border-y-2 py-1 border-white/15"
+          dangerouslySetInnerHTML={{
+            __html: dataAnimeFull.data.synopsis.replace(/\n/g, "<br />"),
+          }}
+        />
       </div>
     </div>
   );

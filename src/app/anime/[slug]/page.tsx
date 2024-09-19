@@ -2,14 +2,14 @@
 
 import AnimeDetails from "@/components/anime-folder/AnimeDetails";
 import AnimeEpisodes from "@/components/anime-folder/AnimeEpisodes";
+import AnimeReviews from "@/components/anime-folder/AnimeReviews";
 import AnimeStaff from "@/components/anime-folder/AnimeStaff";
-import CardsTrailer from "@/components/home-folder/Carousel-folder/CardsTrailer";
+import AnimeStats from "@/components/anime-folder/AnimeStats";
 import CardTrailerPlayer from "@/components/home-folder/Carousel-folder/CardTrailerPlayer";
 import { getAnimeFullById } from "@/helpers/anime.helper";
 import { AnimeTypeByIdFull } from "@/types/anime";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { IoIosAddCircle } from "react-icons/io";
 
 const subTitles = ["Details" , "Characters & Staff", "Episodes", "Videos", "Stats", "Reviews", "Pictures"]
 
@@ -92,7 +92,11 @@ export default function Anime({ params }: { params: any }) {
         }
 
         {subTitleOptions === subTitles[4] &&
-          <AnimeEpisodes dataAnimeFull={dataAnimeFull}/>
+          <AnimeStats dataAnimeFull={dataAnimeFull}/>
+        }
+
+        {subTitleOptions === subTitles[5] &&
+          <AnimeReviews dataAnimeFull={dataAnimeFull}/>
         }
 
       </div>
