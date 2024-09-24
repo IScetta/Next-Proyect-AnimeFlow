@@ -82,6 +82,16 @@ export const getAnimeStatistics = async (id:number) => {
   }
 };
 
+
+export const getAnimePictures = async (id:number) => {
+  try {
+    const data = await fetchDataWithRetry(`${API_URL}anime/${id}/pictures`);
+    return data;
+  } catch (error) {
+    console.error('Error al obtener datos:', error);
+  }
+};
+
 export const getAnimeReviews = async (id:number) => {
   try {
     const data = await fetchDataWithRetry(`${API_URL}anime/${id}/reviews?preliminary=true`);

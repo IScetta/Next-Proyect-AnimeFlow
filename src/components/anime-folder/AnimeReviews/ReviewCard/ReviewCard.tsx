@@ -74,7 +74,7 @@ export default function ReviewCard({
             <p
               className="text-xs m-2"
               dangerouslySetInnerHTML={{
-                __html: review.review.replace(/\n/g, "<br />") + "...",
+                __html: review.review.replace(/\n/g, "<br />"),
               }}
             />
           ) : (

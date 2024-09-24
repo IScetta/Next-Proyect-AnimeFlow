@@ -1,7 +1,9 @@
 "use client"
 
+import AnimeColum from "@/components/anime-folder/AnimeColum";
 import AnimeDetails from "@/components/anime-folder/AnimeDetails";
 import AnimeEpisodes from "@/components/anime-folder/AnimeEpisodes";
+import AnimePictures from "@/components/anime-folder/AnimePictures";
 import AnimeReviews from "@/components/anime-folder/AnimeReviews";
 import AnimeStaff from "@/components/anime-folder/AnimeStaff";
 import AnimeStats from "@/components/anime-folder/AnimeStats";
@@ -53,7 +55,7 @@ export default function Anime({ params }: { params: any }) {
   return (
     <div className="flex flex-row border-2 mt-1 mx-14 border-white/15">
       <div className="flex flex-col">
-        <div className=" border-r-2 border-white/15">
+        <div className="">
           <Image
             alt=""
             className="p-2"
@@ -61,11 +63,13 @@ export default function Anime({ params }: { params: any }) {
             width={350}
             height={250}
           />
-          <h1 className="text-white">Titles</h1>
+          
+          <AnimeColum dataAnimeFull={dataAnimeFull}/>
+
         </div>
       </div>
 
-      <div className="w-full h-full ">
+      <div className="w-full h-full border-l-2 border-white/15">
         <div className=" bg-black/30 p-2">
           <h1 className="text-blueWhite font-bold text-3xl pl-2 ">
             {dataAnimeFull?.data.title}
@@ -74,7 +78,7 @@ export default function Anime({ params }: { params: any }) {
             {dataAnimeFull?.data.title_english}
           </h2>
         </div>
-        <div className="flex flex-row border-y-2 border-white/15 mx-2 p-1">
+        <div className="flex flex-row border-y-2  border-white/15 mx-2 p-1">
         {subTitles.map((data) =>(
             <button key={data} onClick={()=>setSubTitleOptions(data)} className={`text-white text-sm px-2 border-2 border-grayDark ${subTitleOptions === data && "bg-blueWhite" }  hover:bg-blueWhite`}>{data}</button>
         ))}
@@ -97,6 +101,10 @@ export default function Anime({ params }: { params: any }) {
 
         {subTitleOptions === subTitles[5] &&
           <AnimeReviews dataAnimeFull={dataAnimeFull}/>
+        }
+
+        {subTitleOptions === subTitles[6] &&
+          <AnimePictures dataAnimeFull={dataAnimeFull}/>
         }
 
       </div>
