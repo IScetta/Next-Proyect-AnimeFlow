@@ -30,9 +30,10 @@ export default function AnimeStats({dataAnimeFull}:{dataAnimeFull:AnimeTypeByIdF
         fechData()
     },[dataAnimeFull])
 
+  
     if(!dataStats){
         return(
-            <div className="flex text-white/50 w-screen my-52 text-2xl justify-center items-center">
+            <div className="flex text-white/50  my-52 text-2xl justify-center items-center">
                 Loading...
             </div>
         )

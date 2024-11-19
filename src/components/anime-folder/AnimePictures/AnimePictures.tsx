@@ -21,6 +21,14 @@ export default function AnimePictures({dataAnimeFull}:{dataAnimeFull:AnimeTypeBy
         fetchData()
     },[dataAnimeFull])
 
+    if(!dataPictures){
+        return(
+            <div className="flex text-white/50  my-52 text-2xl justify-center items-center">
+                Loading...
+            </div>
+        )
+      }
+
     return(
         <div className="m-2">
             <h2 className="text-white border-b-2 border-blueWhite my-2 ">Reviews</h2>

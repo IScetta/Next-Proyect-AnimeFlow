@@ -1,6 +1,7 @@
 import CardsTrailer from "@/components/home-folder/Carousel-folder/CardsTrailer";
 import { AnimeTypeByIdFull } from "@/types/anime";
 import { IoIosAddCircle } from "react-icons/io";
+import { MdPlayDisabled } from "react-icons/md";
 
 export default function AnimeDetails({
   dataAnimeFull,
@@ -12,13 +13,13 @@ export default function AnimeDetails({
   return (
     <div>
       <div className="flex flex-row text-white m-2 mx-4 ">
-        <div className="flex flex-col mt-2">
+        <div className="flex flex-col mt-2 w-full">
           <div className=" flex flex-row border-2 border-white/15">
             <div className=" p-4 ">
-              <h2 className="flex justify-center mb-1 px-2 bg-blueWhite">
+              <h2 className="flex justify-center mb-1 px-4 m-1 bg-blueWhite">
                 Score
               </h2>
-              <h1 className="font-extrabold text-4xl">
+              <h1 className="flex justify-center font-extrabold text-4xl ">
                 {dataAnimeFull.data.score}
               </h1>
               <h3 className="flex justify-center text-xs ">
@@ -29,8 +30,8 @@ export default function AnimeDetails({
             <div className="border-r-2 my-4 border-white/15"></div>
 
             <div className="flex flex-col w-full mx-2 justify-center">
-              <div className="flex flex-row text-base m-2">
-                <h2 className="px-2 flex flex-row">
+              <div className="flex flex-row text-base m-2 justify-around">
+                <h2 className="px-2 flex flex-row ">
                   Ranked:
                   <div className="font-bold px-2">
                     #{dataAnimeFull.data.rank}
@@ -70,8 +71,10 @@ export default function AnimeDetails({
             </button>
           </div>
         </div>
+
+        {dataAnimeFull.data.trailer.embed_url  ?
         <button
-          className="h-full"
+          className="h-full  w-full"
           onClick={() => openModal(dataAnimeFull.data.trailer.url)}
         >
           <CardsTrailer
@@ -79,6 +82,16 @@ export default function AnimeDetails({
             typeCard={false}
           />
         </button>
+        :
+
+        <div className="h-[175px]  w-full max-w-[350px] bg-white/25 flex justify-center items-center mt-2 m-1  hover:bg-white/15">
+            <MdPlayDisabled className="text-black absolute z-30 m-2 text-6xl text-center" />
+        </div>
+
+      
+      }
+
+
       </div>
       <div className="flex flex-col p-4 m-4">
         <h2 className="text-white text-xl my-2">Synopsis</h2>

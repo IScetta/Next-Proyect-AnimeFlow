@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { useState } from "react";
 import { FaRegCirclePlay } from "react-icons/fa6";
 
 export default function CardsTrailer({
@@ -12,7 +11,8 @@ export default function CardsTrailer({
 
   return (
     <div  className={`flex justify-center items-center pt-2 p-1 ${typeCard && "border-t-4 border-blueWhite hover:scale-105"} `}>
-        <Image className="" src={image_trailer} alt="" width={400} height={250}/>
+
+        <Image className="" src={image_trailer }  alt="" width={400} height={250}/>
         {typeCard && 
               <div className="absolute m-1 z-20 inset-0 bg-gradient-to-t from-black/60 to-transparent hover:to-black/80"></div>
         }

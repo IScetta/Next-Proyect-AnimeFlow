@@ -37,11 +37,12 @@ export default function Anime({ params }: { params: any }) {
         try {
             const response: AnimeTypeByIdFull = await getAnimeFullById(slug);
             setDataAnimeFull(response)
-        } catch (error) {
+          } catch (error) {
             console.error(error)
+          }
         }
-    }
         fechData();
+        
   },[slug])
 
   if(!dataAnimeFull){
@@ -52,10 +53,12 @@ export default function Anime({ params }: { params: any }) {
     )
   }
 
+console.log(dataAnimeFull)
+
   return (
     <div className="flex flex-row border-2 mt-1 mx-14 border-white/15">
       <div className="flex flex-col">
-        <div className="">
+        <div className="h-full border-r-2 border-white/15">
           <Image
             alt=""
             className="p-2"
@@ -69,7 +72,7 @@ export default function Anime({ params }: { params: any }) {
         </div>
       </div>
 
-      <div className="w-full h-full border-l-2 border-white/15">
+      <div className="w-full h-full ">
         <div className=" bg-black/30 p-2">
           <h1 className="text-blueWhite font-bold text-3xl pl-2 ">
             {dataAnimeFull?.data.title}
